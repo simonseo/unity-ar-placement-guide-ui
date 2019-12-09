@@ -97,8 +97,12 @@ public class PlacementGuide : MonoBehaviour
         SetScale(Scale);
     }
 
-    // Can be either called every frame or only sometimes
-    internal void ActivateAt(Vector3 position, Vector3 normal)
+    /// <summary>
+    /// Places a guide UI object. This method can be called however frequently one wishes. 
+    /// </summary>
+    /// <param name="position">Position where the UI will be placed</param>
+    /// <param name="normal">Normal vector or the up direction of the UI</param>
+    public void ActivateAt(Vector3 position, Vector3 normal)
     {
         if (!IsActive)
         {
@@ -133,7 +137,10 @@ public class PlacementGuide : MonoBehaviour
 
     }
 
-    internal void Deactivate()
+    /// <summary>
+    /// Deactivates the guide UI until ActivateAt() is called again
+    /// </summary>
+    public void Deactivate()
     {
         if (IsActive)
         {
